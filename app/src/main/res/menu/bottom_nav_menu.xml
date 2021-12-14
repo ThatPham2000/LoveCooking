@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/memu_home"
+        android:title="Trang chủ"
+        android:icon="@drawable/ic_menubar_home"/>
+    <item android:id="@+id/memu_chat"
+        android:title="Nhắn tin"
+        android:icon="@drawable/ic_menubar_chat"/>
+    <item android:id="@+id/placeholder"
+        android:title=""/>
+    <item android:id="@+id/memu_favorite"
+        android:title="Yêu thích"
+        android:icon="@drawable/ic_menubar_favorite"/>
+    <item android:id="@+id/memu_menu"
+        android:title="Menu"
+        android:icon="@drawable/ic_menubar_menu"/>
+</menu>
