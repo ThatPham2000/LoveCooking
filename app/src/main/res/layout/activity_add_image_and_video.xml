@@ -33,7 +33,8 @@
             android:layout_gravity="center"
             android:layout_marginLeft="30dp"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:fontFamily="@font/roboto_medium"/>
 
         <Button
             android:id="@+id/btn_go_to_content"
@@ -46,7 +47,8 @@
             android:background="@drawable/btn_round"
             android:textColor="@color/white"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/roboto_medium"/>
     </LinearLayout>
     <View
         android:layout_width="match_parent"
@@ -68,7 +70,8 @@
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/roboto_regular"/>
             <ImageButton
                 android:id="@+id/btn_convert"
                 android:layout_width="wrap_content"
@@ -90,7 +93,8 @@
             android:textColor="@color/white"
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/roboto_medium"/>
     </LinearLayout>
 
     <LinearLayout
