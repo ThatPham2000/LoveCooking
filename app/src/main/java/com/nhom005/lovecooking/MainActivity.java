@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,7 +14,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
+import com.nhom005.lovecooking.add.AddImageAndVideo;
 import com.nhom005.lovecooking.adapter.StoryAdapter;
 import com.nhom005.lovecooking.fragment_menu.MyFragmentAdapter;
 import com.nhom005.lovecooking.models.Story;
@@ -23,6 +26,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     ViewPager2 viewPager2;
+
+    FloatingActionButton btnAdd;
     ImageView iconSearch, iconNotification;
 
     @Override
@@ -37,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
 
         viewPager2 = (ViewPager2) findViewById(R.id.view_pager_2);
+        btnAdd = (FloatingActionButton)findViewById(R.id.fab);
 
         // Khởi tạo Adapter
         MyFragmentAdapter myFragmentAdapter = new MyFragmentAdapter(this);
@@ -83,6 +89,15 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
                 return true;
+            }
+        });
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddImageAndVideo.class);
+                startActivity(intent);
+                MainActivity.this.overridePendingTransition(R.anim.slide_in_bottom, R.anim.default_status);
             }
         });
     }
