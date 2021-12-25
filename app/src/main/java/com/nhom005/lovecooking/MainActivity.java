@@ -2,6 +2,7 @@ package com.nhom005.lovecooking;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
@@ -10,23 +11,34 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.nhom005.lovecooking.add.AddImageAndVideo;
+import com.nhom005.lovecooking.adapter.StoryAdapter;
 import com.nhom005.lovecooking.fragment_menu.MyFragmentAdapter;
+import com.nhom005.lovecooking.models.Story;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     ViewPager2 viewPager2;
 
     FloatingActionButton btnAdd;
+    ImageView iconSearch, iconNotification;
+    RecyclerView lvStory;
+    StoryAdapter adapter;
+    ArrayList<Story> stories = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setComponents();
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation_view);
         bottomNavigationView.setBackground(null);
@@ -90,6 +102,45 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void setComponents() {
+        iconSearch = findViewById(R.id.iconSearch);
+        iconSearch.setOnClickListener(v -> {
+            // TODO click
+        });
+        lvStory = findViewById(R.id.lvStory);
+        lvStory.setPaddingRelative(5,0,5,0);
+        adapter = new StoryAdapter(stories);
+        lvStory.setAdapter(adapter);
+
+        getDataStory();
+        adapter.notifyDataSetChanged();
+    }
+
+    private void getDataStory(){
+        stories.add(new Story(R.drawable.user1, R.drawable.mon1));
+        stories.add(new Story(R.drawable.user2, R.drawable.mon2));
+        stories.add(new Story(R.drawable.user3, R.drawable.mon3));
+        stories.add(new Story(R.drawable.user4, R.drawable.mon4));
+        stories.add(new Story(R.drawable.user5, R.drawable.mon5));
+        stories.add(new Story(R.drawable.user6, R.drawable.mon6));
+        stories.add(new Story(R.drawable.user7, R.drawable.mon7));
+        stories.add(new Story(R.drawable.user8, R.drawable.mon8));
+        stories.add(new Story(R.drawable.user9, R.drawable.mon9));
+        stories.add(new Story(R.drawable.user10, R.drawable.mon10));
+        stories.add(new Story(R.drawable.user11, R.drawable.mon11));
+        stories.add(new Story(R.drawable.user1, R.drawable.mon12));
+        stories.add(new Story(R.drawable.user2, R.drawable.mon13));
+        stories.add(new Story(R.drawable.user3, R.drawable.mon29));
+        stories.add(new Story(R.drawable.user4, R.drawable.mon14));
+        stories.add(new Story(R.drawable.user5, R.drawable.mon15));
+        stories.add(new Story(R.drawable.user6, R.drawable.mon16));
+        stories.add(new Story(R.drawable.user7, R.drawable.mon17));
+        stories.add(new Story(R.drawable.user8, R.drawable.mon24));
+        stories.add(new Story(R.drawable.user9, R.drawable.mon25));
+        stories.add(new Story(R.drawable.user10, R.drawable.mon23));
+        stories.add(new Story(R.drawable.user11, R.drawable.mon27));
     }
 
     @Override

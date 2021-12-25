@@ -2,4 +2,12 @@
     <string name="app_name">LoveCooking</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="notification">Notification</string>
+    <string name="create_story_str">Tạo câu chuyện mới</string>
+    <string name="newsfeed">Bảng tin</string>
+    <string name="follow">Theo dõi</string>
+    <string name="material_food">Nguyên liệu:</string>
+    <string name="more_option">Tùy chọn</string>
+    <string name="more_content">Xem thêm</string>
 </resources>
