@@ -1,17 +1,14 @@
 package com.nhom005.lovecooking.add;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.nhom005.lovecooking.MainActivity;
 import com.nhom005.lovecooking.R;
 
 import java.util.ArrayList;
@@ -45,7 +42,7 @@ public class AddImageAndVideo extends Activity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
-                AddImageAndVideo.this.overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
+                AddImageAndVideo.this.overridePendingTransition(R.anim.default_status, R.anim.slide_out_right);
             }
         });
 
@@ -100,6 +97,6 @@ public class AddImageAndVideo extends Activity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        AddImageAndVideo.this.overridePendingTransition(R.anim.right_to_left, R.anim.left_to_right);
+        AddImageAndVideo.this.overridePendingTransition(R.anim.default_status, R.anim.slide_out_bottom);
     }
 }
