@@ -1,16 +1,19 @@
 package com.nhom005.lovecooking.models;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 public class FeedNews {
-    User user;
-    ArrayList<Integer> images;
-    String ulrVideo;
-    String title;
-    String material;
-    ArrayList<String> howToDoIt;
-    String experience;
-    int numberLove;
-    int numberComment;
+    public User user;
+    public ArrayList<Integer> images;
+    public String ulrVideo;
+    public String title;
+    public String material;
+    public ArrayList<String> howToDoIt;
+    public String experience;
+    public int numberLove;
+    public int numberComment;
+    public float rating;
+    public boolean isLoving;
+    public String timeUpload;
 }
