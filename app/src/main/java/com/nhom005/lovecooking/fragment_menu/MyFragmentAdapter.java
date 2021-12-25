@@ -14,14 +14,13 @@ public class MyFragmentAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch (position){
-            case 0:
-                return new HomeFragment();
             case 1:
                 return new ChatFragment();
             case 2:
                 return new FavoriteFragment();
             case 3:
                 return new MenuFragment();
+            case 0:
             default:
                 return new HomeFragment();
         }
