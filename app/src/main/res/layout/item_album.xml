@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Iphone 11"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:id="@+id/txtTenAlbum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"/>
+        <TextView
+            android:text="11000000 vnd"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:id="@+id/txtSoLuong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"/>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/imgAlbum"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/mon1"
+        android:layout_alignParentRight="true"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+    <View
+        android:layout_marginTop="5dp"
+        android:background="#C4C4C4"
+        android:layout_below="@id/imgAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</RelativeLayout>
