@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -89,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setComponents() {
+        iconSearch = findViewById(R.id.iconSearch);
+        iconSearch.setOnClickListener(v -> {
+            // TODO click
+        });
         lvStory = findViewById(R.id.lvStory);
         lvStory.setPaddingRelative(5,0,5,0);
         adapter = new StoryAdapter(stories);

@@ -6,4 +6,5 @@
     <string name="notification">Notification</string>
     <string name="create_story_str">Tạo câu chuyện mới</string>
     <string name="newsfeed">Bảng tin</string>
+    <string name="follow">Theo dõi</string>
 </resources>

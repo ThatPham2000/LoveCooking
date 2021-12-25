@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/drawable/bg_button_non_select.xml" value="0.30564102564102563" />
+        <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/drawable/bg_button_selected.xml" value="0.30564102564102563" />
         <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/drawable/bg_story.xml" value="0.25" />
         <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/drawable/bg_story_1.xml" value="0.30564102564102563" />
         <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/drawable/circle_image_bg.xml" value="0.30564102564102563" />
+        <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/drawable/ic_menubar_add.xml" value="0.30564102564102563" />
         <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/layout-v31/item_story_layout.xml" value="0.2942708333333333" />
-        <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/layout/activity_main.xml" value="0.2551505546751189" />
+        <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/layout/activity_main.xml" value="0.1745454484923814" />
         <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/layout/fragment_home.xml" value="0.2942708333333333" />
         <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/layout/item_story_layout.xml" value="0.4363636212309535" />
         <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/menu/menu_top.xml" value="0.2942708333333333" />
