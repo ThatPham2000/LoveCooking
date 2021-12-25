@@ -4,4 +4,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="search">Search</string>
     <string name="notification">Notification</string>
+    <string name="create_story_str">Tạo câu chuyện mới</string>
+    <string name="newsfeed">Bảng tin</string>
 </resources>
