@@ -19,7 +19,7 @@ import java.util.List;
 
 public class AddImageAndVideo extends Activity {
     ImageButton btnBack;
-    Button btnNext;
+    Button btnNext, btnClear;
     RecyclerView recyclerView;
     TextView albumName;
 
@@ -41,6 +41,7 @@ public class AddImageAndVideo extends Activity {
         btnNext = (Button) findViewById(R.id.btn_go_to_content);
         btnConvert = (ImageButton)findViewById(R.id.btn_convert);
         albumName = (TextView)findViewById(R.id.album_name);
+        btnClear = (Button)findViewById(R.id.btn_clear);
 
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view_gallery);
         recyclerView.setHasFixedSize(false);
@@ -83,6 +84,16 @@ public class AddImageAndVideo extends Activity {
                 } else {
                     btnConvert.setImageResource(R.drawable.ic_down);
                     isCheckConvert = false;
+                    recyclerView.setLayoutManager(gridLayoutManager);
+                    recyclerView.setAdapter(galleryAdapter);
+                }
+            }
+        });
+
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!isCheckConvert){
                     recyclerView.setLayoutManager(gridLayoutManager);
                     recyclerView.setAdapter(galleryAdapter);
                 }
