@@ -1,6 +1,7 @@
 package com.nhom005.lovecooking.add;
 
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
@@ -8,18 +9,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.nhom005.lovecooking.R;
+import com.nhom005.lovecooking.models.AlbumPicker;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AddImageAndVideo extends Activity {
     ImageButton btnBack;
-    Button btnNext;
+    Button btnNext, btnClear;
     RecyclerView recyclerView;
+    TextView albumName;
+
     GalleryAdapter galleryAdapter;
     List<Integer> listPhoto = new ArrayList<>();
+
+    AlbumAdapter albumAdapter;
+    List<AlbumPicker> listAlbum = new ArrayList<>();
 
     // Convert Gallery to Album
     ImageButton btnConvert;
@@ -32,11 +40,30 @@ public class AddImageAndVideo extends Activity {
         btnBack = (ImageButton) findViewById(R.id.btn_back_to_home);
         btnNext = (Button) findViewById(R.id.btn_go_to_content);
         btnConvert = (ImageButton)findViewById(R.id.btn_convert);
+        albumName = (TextView)findViewById(R.id.album_name);
+        btnClear = (Button)findViewById(R.id.btn_clear);
 
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view_gallery);
         recyclerView.setHasFixedSize(false);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(AddImageAndVideo.this, 3);
+
+        setListPhoto();
+        galleryAdapter = new GalleryAdapter(AddImageAndVideo.this, listPhoto);
+        recyclerView.setAdapter(galleryAdapter);
         recyclerView.setLayoutManager(gridLayoutManager);
+
+        setListAlbum();
+        albumAdapter = new AlbumAdapter(AddImageAndVideo.this, listAlbum, new AlbumAdapter.AlbumListener() {
+            @Override
+            public void onAlbumClick(String name) {
+                albumName.setText(name);
+                btnConvert.setImageResource(R.drawable.ic_down);
+                isCheckConvert = false;
+                recyclerView.setLayoutManager(gridLayoutManager);
+                recyclerView.setAdapter(galleryAdapter);
+            }
+        });
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(AddImageAndVideo.this);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,19 +79,39 @@ public class AddImageAndVideo extends Activity {
                 if (!isCheckConvert){
                     btnConvert.setImageResource(R.drawable.ic_up);
                     isCheckConvert = true;
+                    recyclerView.setLayoutManager(linearLayoutManager);
+                    recyclerView.setAdapter(albumAdapter);
                 } else {
                     btnConvert.setImageResource(R.drawable.ic_down);
                     isCheckConvert = false;
+                    recyclerView.setLayoutManager(gridLayoutManager);
+                    recyclerView.setAdapter(galleryAdapter);
                 }
             }
         });
 
-        setListPhoto();
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!isCheckConvert){
+                    recyclerView.setLayoutManager(gridLayoutManager);
+                    recyclerView.setAdapter(galleryAdapter);
+                }
+            }
+        });
+    }
 
-
-        galleryAdapter = new GalleryAdapter(AddImageAndVideo.this, listPhoto);
-
-        recyclerView.setAdapter(galleryAdapter);
+    private void setListAlbum() {
+        listAlbum.add(new AlbumPicker("Thư viện", 100, R.drawable.mon1));
+        listAlbum.add(new AlbumPicker("Camera", 200, R.drawable.mon2));
+        listAlbum.add(new AlbumPicker("Facebook", 100, R.drawable.mon3));
+        listAlbum.add(new AlbumPicker("Messenger", 300, R.drawable.mon4));
+        listAlbum.add(new AlbumPicker("Zalo", 100, R.drawable.mon5));
+        listAlbum.add(new AlbumPicker("DCIM", 100, R.drawable.mon6));
+        listAlbum.add(new AlbumPicker("Telegram", 900, R.drawable.mon7));
+        listAlbum.add(new AlbumPicker("Yêu thích", 120, R.drawable.mon8));
+        listAlbum.add(new AlbumPicker("Download", 150, R.drawable.mon9));
+        listAlbum.add(new AlbumPicker("Instagram", 100, R.drawable.mon10));
     }
 
     private void setListPhoto() {
