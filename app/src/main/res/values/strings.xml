@@ -7,4 +7,7 @@
     <string name="create_story_str">Tạo câu chuyện mới</string>
     <string name="newsfeed">Bảng tin</string>
     <string name="follow">Theo dõi</string>
+    <string name="material_food">Nguyên liệu:</string>
+    <string name="more_option">Tùy chọn</string>
+    <string name="more_content">Xem thêm</string>
 </resources>
