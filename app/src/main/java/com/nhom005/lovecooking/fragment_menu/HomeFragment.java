@@ -77,7 +77,7 @@ public class HomeFragment extends Fragment {
     private void getDataFeedNews() {
         for (int i = 0; i < 10; i++) {
             User user = new User();
-            user.avatar = R.drawable.user9;
+            user.avatar = R.drawable.user6;
             user.education = "Đại học Khoa Học Tự Nhiên";
             user.work = "Nhóm 05 Thiết kế giao diện";
             user.name = "Nguyễn Văn A" + i;

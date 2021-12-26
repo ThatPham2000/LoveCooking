@@ -71,100 +71,117 @@
         android:layout_height="1dp"
         android:background="#FFC4C4C4"/>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tên món ăn"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColor="@color/black"/>
-        <EditText
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ví dụ: GÀ KHO GỪNG"
-            android:background="@drawable/edittext_tyle"
-            android:layout_marginTop="5dp"
-            android:padding="15dp"/>
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tên món ăn"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/black"/>
+                <EditText
+                    android:id="@+id/food_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ví dụ: GÀ KHO GỪNG"
+                    android:background="@drawable/edittext_tyle"
+                    android:layout_marginTop="5dp"
+                    android:padding="15dp"
+                    android:text="GÀ KHO GỪNG"/>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nguyên liệu"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColor="@color/black"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ví dụ: 2kg gà ta, 3 củ gừng,..."
-            android:background="@drawable/edittext_tyle"
-            android:layout_marginTop="5dp"
-            android:padding="15dp"/>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nguyên liệu"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/black"/>
+                <EditText
+                    android:id="@+id/nguyenlieu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ví dụ: 2kg gà ta, 3 củ gừng,..."
+                    android:background="@drawable/edittext_tyle"
+                    android:layout_marginTop="5dp"
+                    android:padding="15dp"
+                    android:text="Gà 1 con, gừng 1 củ, tỏi băm 3 tép, hành tím 2 củ, ngò rí, dầu ăn, gia vị thông dụng (muối đường, hạt nêm, bột ngọt, tiêu)."/>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cách thực hiện"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColor="@color/black"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ví dụ:\nBước 1: Sơ chế nguyên liệu...\nBước 2: Ướp thịt gà..."
-            android:background="@drawable/edittext_tyle"
-            android:layout_marginTop="5dp"
-            android:padding="15dp"/>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cách thực hiện"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/black"/>
+                <EditText
+                    android:id="@+id/howtodo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ví dụ:\nBước 1: Sơ chế nguyên liệu...\nBước 2: Ướp thịt gà..."
+                    android:background="@drawable/edittext_tyle"
+                    android:layout_marginTop="5dp"
+                    android:padding="15dp"
+                    android:text="Bước 1: Sơ chế nguyên liệu. Làm sạch và khử mùi hôi thịt gà, chà xát với muối, sau đó rửa lại vài lần với nước, chặt miếng vừa ăn. Gừng gọt sạch.\nBước 2: Ướp thịt gà. Cho thịt gà vào tô thêm vào phần hành tím và gừng băm nhỏ, thêm các loại gia vị và trộn đều ướp khoảng 30 phút cho thấm gia vị.\nBước 3: Làm gà kho gừng. Bạn làm nóng nồi, cho 1 muỗng canh dầu ăn, toàn bộ phần gừng cắt sợi và tỏi băm vào phi thơm. Cho gà vào, đổ nước, kho nhỏ lửa.\nBước 4: Trưng bày và trang trí."/>
+            </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kinh nghiệm (tùy chọn)"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:fontFamily="@font/roboto_medium"
-            android:textColor="@color/black"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ví dụ: nên thực hiện sau 20 phút ướp để gia vị thấm..."
-            android:background="@drawable/edittext_tyle"
-            android:layout_marginTop="5dp"
-            android:padding="15dp"/>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kinh nghiệm (tùy chọn)"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/black"/>
+                <EditText
+                    android:id="@+id/experience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ví dụ: nên thực hiện sau 20 phút ướp để gia vị thấm..."
+                    android:background="@drawable/edittext_tyle"
+                    android:layout_marginTop="5dp"
+                    android:padding="15dp"
+                    android:text="Nên chọn gà ta vì thịt sẽ dai và ngon hơn, nên thực hiện nấu sau 20 phút ướp thịt để gà được thấm hơn."/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
