@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -97,6 +98,15 @@ public class AddImageAndVideo extends Activity {
                     recyclerView.setLayoutManager(gridLayoutManager);
                     recyclerView.setAdapter(galleryAdapter);
                 }
+            }
+        });
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddImageAndVideo.this, AddContent.class);
+                startActivity(intent);
+                AddImageAndVideo.this.overridePendingTransition(R.anim.slide_in_right, R.anim.default_status);
             }
         });
     }

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoveCooking">
         <activity
+            android:name=".add.AddContent"
+            android:exported="true" />
+        <activity
             android:name=".add.AddImageAndVideo"
             android:exported="true" />
         <activity
