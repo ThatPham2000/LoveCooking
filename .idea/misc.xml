@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/123/AndroidStudioProjects/LoveCooking/app/src/main/res/drawable/bg_paging_image_food.xml" value="0.2703125" />
         <entry key="..\:/Users/123/AndroidStudioProjects/LoveCooking/app/src/main/res/drawable/edittext_tyle.xml" value="0.2703125" />
         <entry key="..\:/Users/123/AndroidStudioProjects/LoveCooking/app/src/main/res/layout/activity_add_content.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/123/AndroidStudioProjects/LoveCooking/app/src/main/res/layout/activity_add_image_and_video.xml" value="0.2" />
         <entry key="..\:/Users/123/AndroidStudioProjects/LoveCooking/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/123/AndroidStudioProjects/LoveCooking/app/src/main/res/layout/activity_post_preview.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/123/AndroidStudioProjects/LoveCooking/app/src/main/res/layout/fragment_chat.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/123/AndroidStudioProjects/LoveCooking/app/src/main/res/layout/fragment_favorite.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/123/AndroidStudioProjects/LoveCooking/app/src/main/res/layout/fragment_home.xml" value="0.1793478260869565" />

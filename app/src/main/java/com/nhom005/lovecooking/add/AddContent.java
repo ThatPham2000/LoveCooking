@@ -13,7 +13,7 @@ import com.nhom005.lovecooking.R;
 
 public class AddContent extends AppCompatActivity {
     ImageButton btnBack;
-    Button btnPost;
+    Button btnPost, btnPreview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,7 @@ public class AddContent extends AppCompatActivity {
 
         btnBack = (ImageButton) findViewById(R.id.btn_back_to_add_image);
         btnPost = (Button)findViewById(R.id.btn_post);
+        btnPreview = (Button)findViewById(R.id.btn_preview);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +37,15 @@ public class AddContent extends AppCompatActivity {
                 Intent intent = new Intent(AddContent.this, MainActivity.class);
                 startActivity(intent);
                 AddContent.this.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
+        btnPreview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddContent.this, PostPreview.class);
+                startActivity(intent);
+                AddContent.this.overridePendingTransition(R.anim.slide_in_right, R.anim.default_status);
             }
         });
     }
