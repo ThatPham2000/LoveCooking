@@ -12,15 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoveCooking">
         <activity
-            android:name=".SearchActivity"
+            android:name=".search.ResultSearchActivity"
             android:exported="false" />
-	<activity
+        <activity
+            android:name=".search.SearchActivity"
+            android:exported="false" />
+        <activity
             android:name=".add.PostPreview"
             android:exported="true" />
         <activity
             android:name=".add.AddContent"
             android:exported="true" />
-
         <activity
             android:name=".add.AddImageAndVideo"
             android:exported="true" />

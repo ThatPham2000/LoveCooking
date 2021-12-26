@@ -13,4 +13,5 @@
     <string name="hint_search">Tìm kiếm</string>
     <string name="delete_all">Xóa tất cả</string>
     <string name="near_search">Tìm kiếm thường xuyên</string>
+    <string name="unfollow">Bỏ theo dõi</string>
 </resources>

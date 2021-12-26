@@ -8,4 +8,5 @@ public class User {
     public String name;
     public int numberFollower;
     public int numberStatus;
+    public boolean isFollowing;
 }

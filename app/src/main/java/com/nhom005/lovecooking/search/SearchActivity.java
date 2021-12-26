@@ -1,16 +1,20 @@
-package com.nhom005.lovecooking;
+package com.nhom005.lovecooking.search;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.nhom005.lovecooking.R;
 import com.nhom005.lovecooking.adapter.HistoryFoodSearchAdapter;
 import com.nhom005.lovecooking.adapter.HistoryUserAdapter;
 import com.nhom005.lovecooking.models.User;
@@ -63,23 +67,24 @@ public class SearchActivity extends AppCompatActivity {
         historyFoodSearchAdapter = new HistoryFoodSearchAdapter(Constants.historyTextSearch);
         lvFoodSearch.setAdapter(historyFoodSearchAdapter);
 
-        getDatabase();
-    }
+        searchKeyInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean handled = false;
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    String keySearch = searchKeyInput.getText().toString();
+                    Constants.historyTextSearch.add(keySearch);
 
-    private void getDatabase() {
-        for (int i = 0; i < 10; i++) {
-            User user = new User();
-            user.avatar = R.drawable.user6;
-            user.education = "Đại học Khoa Học Tự Nhiên";
-            user.work = "Nhóm 05 Thiết kế giao diện";
-            user.name = "Nguyễn Văn A" + i;
-            user.numberFollower = 10000;
-            user.numberStatus = 30;
-            user.website = "https://www.abc.nhom05.vn";
-            Constants.historyUser.add(user);
+                    historyFoodSearchAdapter.notifyDataSetChanged();
 
-            Constants.historyTextSearch.add("Tên món ăn " + (i + 1));
-        }
+                    Intent intent = new Intent(getApplicationContext(), ResultSearchActivity.class);
+                    intent.putExtra(Constants.KEY_TEXT_SEARCH, keySearch);
+                    startActivity(intent);
+                    handled = true;
+                }
+                return handled;
+            }
+        });
     }
 
     @Override
