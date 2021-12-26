@@ -2,6 +2,7 @@ package com.nhom005.lovecooking.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -19,6 +20,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom005.lovecooking.R;
 import com.nhom005.lovecooking.models.FeedNews;
+import com.nhom005.lovecooking.search.PostDetailActivity;
+import com.nhom005.lovecooking.search.ProfileActivity;
+import com.nhom005.lovecooking.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +56,11 @@ public class FeedNewsAdapter extends RecyclerView.Adapter<FeedNewsAdapter.FeedNe
             index.set(1);
 
             holder.avtUser.setImageResource(feedNews.user.avatar);
+            holder.avtUser.setOnClickListener(v->{
+                Intent intent = new Intent(context, ProfileActivity.class);
+                intent.putExtra(Constants.KEY_USER, feedNews.user);
+                context.startActivity(intent);
+            });
             holder.userName.setText(feedNews.user.name);
             holder.timeUpload.setText(feedNews.timeUpload + " phút trước");
             holder.titleStatus.setText(feedNews.title);
@@ -153,6 +162,12 @@ public class FeedNewsAdapter extends RecyclerView.Adapter<FeedNewsAdapter.FeedNe
                     holder.pagingImage.setText(index.get() + "/" + (feedNews.images.size() + 1));
                 }
 
+            });
+
+            holder.moreContent.setOnClickListener(v->{
+                Intent intent = new Intent(context, PostDetailActivity.class);
+                intent.putExtra(Constants.KEY_FEED_NEWS, feedNews);
+                context.startActivity(intent);
             });
         }
     }

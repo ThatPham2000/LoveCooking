@@ -9,9 +9,10 @@
     <string name="follow">Theo dõi</string>
     <string name="material_food">Nguyên liệu:</string>
     <string name="more_option">Tùy chọn</string>
-    <string name="more_content">Xem thêm</string>
+    <string name="more_content"><u>Xem thêm</u></string>
     <string name="hint_search">Tìm kiếm</string>
     <string name="delete_all">Xóa tất cả</string>
     <string name="near_search">Tìm kiếm thường xuyên</string>
     <string name="unfollow">Bỏ theo dõi</string>
+    <string name="personal_information"><u>Thông tin cá nhân</u></string>
 </resources>

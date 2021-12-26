@@ -3,6 +3,7 @@ package com.nhom005.lovecooking.search.adapter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ public class UserResultHolder extends ResultViewHolder {
     ImageView avtUser;
     TextView userName, followNumber, postNumber;
     Button followBtn, unfollowBtn;
+    LinearLayout userLayout;
 
     public UserResultHolder(@NonNull View itemView) {
         super(itemView);
@@ -22,5 +24,6 @@ public class UserResultHolder extends ResultViewHolder {
         postNumber = itemView.findViewById(R.id.postNumber);
         followBtn = itemView.findViewById(R.id.followBtn);
         unfollowBtn = itemView.findViewById(R.id.unfollowBtn);
+        userLayout = itemView.findViewById(R.id.userLayout);
     }
 }

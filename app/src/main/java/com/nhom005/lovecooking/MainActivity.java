@@ -114,9 +114,38 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getDataBase() {
+        User user1 = new User();
+        user1.avatar = R.drawable.user6;
+        user1.education = "Đại học Khoa Học Tự Nhiên";
+        user1.work = "Nhóm 05 Thiết kế giao diện";
+        user1.name = "Pham Thanh Thanh";
+        user1.numberFollower = 10000;
+        user1.numberStatus = 30;
+        user1.website = "https://www.abc.nhom05.vn";
+        user1.isFollowing = false;
+
+        User user2 = new User();
+        user2.avatar = R.drawable.avt_user;
+        user2.education = "Đại học Khoa Học Tự Nhiên";
+        user2.work = "Nhóm 05 Thiết kế giao diện";
+        user2.name = "Nguyen Thi B";
+        user2.numberFollower = 10000;
+        user2.numberStatus = 30;
+        user2.website = "https://www.abc.nhom05.vn";
+        user2.isFollowing = true;
+
+        Constants.historyUser.add(user1);
+        Constants.historyUser.add(user2);
         for (int i = 0; i < 10; i++) {
             User user = new User();
-            user.avatar = R.drawable.user6;
+            if (i % 3 == 1) {
+                user.avatar = R.drawable.user7;
+            } else if (i % 3 == 2) {
+                user.avatar = R.drawable.user6;
+            } else {
+                user.avatar = R.drawable.user8;
+
+            }
             user.education = "Đại học Khoa Học Tự Nhiên";
             user.work = "Nhóm 05 Thiết kế giao diện";
             user.name = "Nguyen Van A" + i;
@@ -126,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
             user.isFollowing = i % 3 == 0;
             Constants.users.add(user);
 
-            if (i % 3 == 0)
+            if (i % 5 == 0)
                 Constants.historyUser.add(user);
         }
 
@@ -184,28 +213,7 @@ public class MainActivity extends AppCompatActivity {
         Constants.historyTextSearch.add("gà kho xả ớt");
         Constants.historyTextSearch.add("Rau muốn xào tỏi");
 
-        User user1 = new User();
-        user1.avatar = R.drawable.user6;
-        user1.education = "Đại học Khoa Học Tự Nhiên";
-        user1.work = "Nhóm 05 Thiết kế giao diện";
-        user1.name = "Pham Thanh Thanh";
-        user1.numberFollower = 10000;
-        user1.numberStatus = 30;
-        user1.website = "https://www.abc.nhom05.vn";
-        user1.isFollowing = false;
 
-        User user2 = new User();
-        user2.avatar = R.drawable.avt_user;
-        user2.education = "Đại học Khoa Học Tự Nhiên";
-        user2.work = "Nhóm 05 Thiết kế giao diện";
-        user2.name = "Nguyen Thi B";
-        user2.numberFollower = 10000;
-        user2.numberStatus = 30;
-        user2.website = "https://www.abc.nhom05.vn";
-        user2.isFollowing = true;
-
-        Constants.historyUser.add(user1);
-        Constants.historyUser.add(user2);
     }
 
     @Override

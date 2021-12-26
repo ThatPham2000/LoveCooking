@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Constants {
     public static final String KEY_FEED_NEWS = "KEY_FEED_NEWS";
     public static final String KEY_TEXT_SEARCH = "KEY_TEXT_SEARCH";
+    public static final String KEY_USER = "KEY_USER";
 
     public static ArrayList<User> historyUser = new ArrayList<>();
     public static ArrayList<String> historyTextSearch = new ArrayList<>();

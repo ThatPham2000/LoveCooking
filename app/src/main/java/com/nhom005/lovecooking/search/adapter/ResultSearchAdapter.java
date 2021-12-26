@@ -16,6 +16,7 @@ import com.nhom005.lovecooking.R;
 import com.nhom005.lovecooking.models.FeedNews;
 import com.nhom005.lovecooking.models.User;
 import com.nhom005.lovecooking.search.PostDetailActivity;
+import com.nhom005.lovecooking.search.ProfileActivity;
 import com.nhom005.lovecooking.utils.Constants;
 
 import java.util.ArrayList;
@@ -79,6 +80,12 @@ public class ResultSearchAdapter extends RecyclerView.Adapter<ResultViewHolder> 
             userResultHolder.avtUser.setImageResource(user.avatar);
             userResultHolder.followNumber.setText(user.numberFollower + " Người theo dõi");
             userResultHolder.postNumber.setText(user.numberStatus + " Bài đăng");
+
+            userResultHolder.userLayout.setOnClickListener(v->{
+                Intent intent = new Intent(context, ProfileActivity.class);
+                intent.putExtra(Constants.KEY_USER, user);
+                context.startActivity(intent);
+            });
         } else {
             PostResultHolder postResultHolder = (PostResultHolder) holder;
             if (values != null && !values.isEmpty()) {
@@ -96,6 +103,11 @@ public class ResultSearchAdapter extends RecyclerView.Adapter<ResultViewHolder> 
                 index.set(1);
 
                 postResultHolder.avtUser.setImageResource(feedNews.user.avatar);
+                postResultHolder.avtUser.setOnClickListener(v->{
+                    Intent intent = new Intent(context, ProfileActivity.class);
+                    intent.putExtra(Constants.KEY_USER, feedNews.user);
+                    context.startActivity(intent);
+                });
                 postResultHolder.userName.setText(feedNews.user.name);
                 postResultHolder.timeUpload.setText(feedNews.timeUpload + " phút trước");
                 postResultHolder.titleStatus.setText(feedNews.title);
