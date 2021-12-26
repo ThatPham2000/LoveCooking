@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_newsfeed"
@@ -51,6 +52,7 @@
         </LinearLayout>
 
         <ImageButton
+            android:id="@+id/moreBtn"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@color/white"
@@ -121,105 +123,128 @@
     </LinearLayout>
 
     <FrameLayout
+        android:id="@+id/videoLayout"
         android:layout_width="match_parent"
         android:layout_height="300dp">
-        <VideoView
-            android:id="@+id/videoView"
+
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/black"
-            />
+            android:layout_height="match_parent">
+
+            <VideoView
+                android:id="@+id/videoView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+        </FrameLayout>
+
         <ImageView
             android:id="@+id/imageView"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
-            android:src="@drawable/mon2"/>
-        <ImageButton
+            android:src="@drawable/mon2"
+            android:visibility="gone" />
+
+        <ImageView
             android:id="@+id/nextImageBtn"
             android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_next_image"
-            android:background="@android:color/transparent"
+            android:layout_height="60dp"
             android:layout_gravity="right|center_vertical"
-            />
-        <ImageButton
-            android:visibility="gone"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_next_image"
+            app:tint="@color/white" />
+
+        <ImageView
             android:id="@+id/prevImageBtn"
             android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_prev_image2"
-            android:background="@android:color/transparent"
+            android:layout_height="60dp"
             android:layout_gravity="left|center_vertical"
-            />
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_prev_image2"
+            android:visibility="gone"
+            app:tint="@color/white" />
+
         <TextView
             android:id="@+id/pagingImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1/4"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bg_paging_image_food"
             android:fontFamily="@font/roboto_bold"
-            android:textColor="@color/white"
             android:paddingHorizontal="15dp"
             android:paddingVertical="5dp"
-            android:background="@drawable/bg_paging_image_food"
-            android:layout_gravity="right"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            />
+            android:text="1/4"
+            android:textColor="@color/white" />
     </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingHorizontal="10dp"
-        android:paddingVertical="10dp"
-        android:gravity="center_vertical">
+        android:paddingVertical="10dp">
+
         <TextView
+            android:id="@+id/numberLove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="30"
-            android:paddingHorizontal="5dp"
             android:fontFamily="@font/roboto_regular"
-            android:textSize="16sp"
-            android:textColor="@color/black"/>
+            android:paddingHorizontal="5dp"
+            android:text="30"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
         <ImageView
             android:id="@+id/loveBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_love"/>
+            android:src="@drawable/ic_love" />
+
         <TextView
+            android:id="@+id/numberComment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="30"
-            android:paddingHorizontal="5dp"
             android:fontFamily="@font/roboto_regular"
-            android:textSize="16sp"
-            android:textColor="@color/black"/>
+            android:paddingHorizontal="5dp"
+            android:text="30"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
         <ImageView
+            android:id="@+id/commentBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_comment"/>
+            android:src="@drawable/ic_comment" />
+
         <ImageView
+            android:id="@+id/shareBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="15dp"
-            android:src="@drawable/ic_share"/>
+            android:src="@drawable/ic_share" />
+
         <Space
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
+
         <TextView
+            android:id="@+id/numberRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4.5"
             android:fontFamily="@font/roboto_bold"
-            android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:text="4.5"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
         <ImageView
+            android:id="@+id/ratingBtn"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_round_star_24"/>
+            android:src="@drawable/ic_round_star_24" />
     </LinearLayout>
 </LinearLayout>
