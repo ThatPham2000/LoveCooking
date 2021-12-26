@@ -53,7 +53,7 @@ public class FeedNewsAdapter extends RecyclerView.Adapter<FeedNewsAdapter.FeedNe
 
             holder.avtUser.setImageResource(feedNews.user.avatar);
             holder.userName.setText(feedNews.user.name);
-            holder.timeUpload.setText(feedNews.timeUpload + "phút trước");
+            holder.timeUpload.setText(feedNews.timeUpload + " phút trước");
             holder.titleStatus.setText(feedNews.title);
             holder.materialFood.setText(feedNews.material);
             holder.numberComment.setText(feedNews.numberComment + "");
@@ -78,7 +78,7 @@ public class FeedNewsAdapter extends RecyclerView.Adapter<FeedNewsAdapter.FeedNe
             holder.videoView.setMediaController(mediaController);
 
             holder.videoView.setOnPreparedListener(mp -> {
-                holder.videoView.start();
+//                holder.videoView.start();
                 mp.setOnVideoSizeChangedListener((mp1, width, height) -> mediaController.setAnchorView(holder.videoView));
             });
 
@@ -86,10 +86,9 @@ public class FeedNewsAdapter extends RecyclerView.Adapter<FeedNewsAdapter.FeedNe
                 if (holder.videoView.isPlaying()) {
                     holder.videoView.pause();
                 } else {
-                    holder.videoView.resume();
+                    holder.videoView.start();
                 }
             });
-
 
 
             holder.loveBtn.setOnClickListener(v -> {
@@ -138,6 +137,14 @@ public class FeedNewsAdapter extends RecyclerView.Adapter<FeedNewsAdapter.FeedNe
                     holder.videoLayout.setVisibility(View.VISIBLE);
                     holder.imageView.setVisibility(View.GONE);
                     holder.pagingImage.setText(index.get() + "/" + (feedNews.images.size() + 1));
+                    holder.imageView.setImageResource(feedNews.images.get(0));
+
+                    holder.videoView.setVideoURI(uri);
+                    holder.videoView.requestFocus();
+
+                    mediaController.setAnchorView(holder.videoView);
+                    holder.videoView.setMediaController(mediaController);
+
                 } else if (index.get() > 1) {
                     index.set(index.get() - 1);
                     indexImage.set(indexImage.get() - 1);

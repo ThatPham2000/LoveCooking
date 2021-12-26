@@ -120,6 +120,7 @@ public class HomeFragment extends Fragment {
             feedNews.numberComment = 50;
             feedNews.numberLove = 120;
             feedNews.rating = 4.5f;
+            feedNews.timeUpload = 10 + i * 5 + "";
 
             feedNewsList.add(feedNews);
             feedNewsAdapter.notifyItemInserted(i);

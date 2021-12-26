@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
     private void setComponents() {
         iconSearch = findViewById(R.id.iconSearch);
         iconSearch.setOnClickListener(v -> {
-            // TODO click
+            startActivity(new Intent(this, SearchActivity.class));
         });
 
     }
