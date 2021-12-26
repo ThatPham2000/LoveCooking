@@ -13,7 +13,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/btn_back_to_home"
+            android:id="@+id/btn_back_to_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_back"
@@ -38,7 +38,7 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/btn_go_to_content"
+            android:id="@+id/btn_post"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Đăng"

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -13,6 +14,7 @@ import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import com.nhom005.lovecooking.MainActivity;
 import com.nhom005.lovecooking.R;
 import com.nhom005.lovecooking.models.FeedNews;
 import com.nhom005.lovecooking.models.User;
@@ -28,6 +30,9 @@ public class PostPreview extends AppCompatActivity {
     ImageView nextImageBtn;
     ImageView prevImageBtn;
     FrameLayout videoLayout;
+
+    ImageButton btnBackToContent;
+    Button btnPost;
 
     TextView foodNameTxt, nguyenLieuTxt, buoc1Txt, buoc2Txt, buoc3Txt, buoc4Txt, kinhNghiemTxt;
 
@@ -72,6 +77,25 @@ public class PostPreview extends AppCompatActivity {
         videoView = findViewById(R.id.videoView);
         nextImageBtn = findViewById(R.id.nextImageBtn);
         prevImageBtn = findViewById(R.id.prevImageBtn);
+
+        btnBackToContent = (ImageButton)findViewById(R.id.btn_back_to_content);
+        btnBackToContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+                PostPreview.this.overridePendingTransition(R.anim.default_status, R.anim.slide_out_right);
+            }
+        });
+
+        btnPost = (Button) findViewById(R.id.btn_post);
+        btnPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(PostPreview.this, MainActivity.class);
+                startActivity(intent1);
+                PostPreview.this.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
 
         FeedNews feedNews = new FeedNews();
         feedNews.images = new ArrayList<>();
