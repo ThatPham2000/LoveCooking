@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoveCooking">
         <activity
+            android:name=".search.PostDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".search.ResultSearchActivity"
             android:exported="false" />
         <activity

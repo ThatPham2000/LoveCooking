@@ -2,6 +2,7 @@ package com.nhom005.lovecooking.search.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.nhom005.lovecooking.R;
 import com.nhom005.lovecooking.models.FeedNews;
 import com.nhom005.lovecooking.models.User;
+import com.nhom005.lovecooking.search.PostDetailActivity;
+import com.nhom005.lovecooking.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -80,6 +83,13 @@ public class ResultSearchAdapter extends RecyclerView.Adapter<ResultViewHolder> 
             PostResultHolder postResultHolder = (PostResultHolder) holder;
             if (values != null && !values.isEmpty()) {
                 FeedNews feedNews = (FeedNews) values.get(position);
+
+                postResultHolder.postLayout.setOnClickListener(v->{
+                    Intent intent = new Intent(context, PostDetailActivity.class);
+                    intent.putExtra(Constants.KEY_FEED_NEWS, feedNews);
+                    context.startActivity(intent);
+                });
+
                 AtomicInteger indexImage = new AtomicInteger();
                 indexImage.set(0);
                 AtomicInteger index = new AtomicInteger();

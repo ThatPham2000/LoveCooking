@@ -168,9 +168,9 @@ public class MainActivity extends AppCompatActivity {
             feedNews.howToDoIt.add("Sau 2 tiếng, cho thịt gà vào nồi rồi bắc lên bếp, xào cho thịt gà săn lại.\n" +
                     "\n" +
                     "Thêm khoảng 1/4 chén nước (chén cơm) rồi đậy nắp lại, để lửa vừa và kho trong vòng 15 phút.");
-            feedNews.howToDoIt.add("Gà kho sả ớt đậm đà, cay thơm dùng với cơm nóng là ngon số một đấy nhé.\n" +
-                    "\n" +
-                    "Dùng khi còn nóng để cảm nhận vị cay nồng của ớt và hương thơm nức mũi của sả. Chúc bạn thành công!");
+            feedNews.howToDoIt.add("Gà kho sả ớt đậm đà, cay thơm dùng với cơm nóng là ngon số một đấy nhé.\n"
+            );
+            feedNews.howToDoIt.add("Dùng khi còn nóng để cảm nhận vị cay nồng của ớt và hương thơm nức mũi của sả. Chúc bạn thành công!");
 
             feedNews.experience = "Kho càng lâu càng ngon";
             feedNews.numberComment = 50;

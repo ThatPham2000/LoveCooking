@@ -5,6 +5,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -12,7 +13,7 @@ import androidx.annotation.NonNull;
 
 import com.nhom005.lovecooking.R;
 
-public class PostResultHolder extends ResultViewHolder{
+public class PostResultHolder extends ResultViewHolder {
     ImageView avtUser;
     ImageView imageView;
     ImageView loveBtn;
@@ -36,6 +37,7 @@ public class PostResultHolder extends ResultViewHolder{
     FrameLayout videoLayout;
 
     Button followBtn, unfollowBtn;
+    LinearLayout postLayout;
 
     public PostResultHolder(@NonNull View itemView) {
         super(itemView);
@@ -63,5 +65,6 @@ public class PostResultHolder extends ResultViewHolder{
 
         followBtn = itemView.findViewById(R.id.followBtn);
         unfollowBtn = itemView.findViewById(R.id.unfollowBtn);
+        postLayout = itemView.findViewById(R.id.postLayout);
     }
 }
