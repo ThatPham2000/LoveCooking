@@ -14,6 +14,13 @@
         <activity
             android:name=".SearchActivity"
             android:exported="false" />
+	<activity
+            android:name=".add.PostPreview"
+            android:exported="true" />
+        <activity
+            android:name=".add.AddContent"
+            android:exported="true" />
+
         <activity
             android:name=".add.AddImageAndVideo"
             android:exported="true" />

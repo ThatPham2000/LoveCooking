@@ -22,7 +22,7 @@
             android:layout_gravity="center"
             android:background="@color/white"
             android:layout_marginLeft="10dp"
-            android:tint="@color/black"/>
+            app:tint="@color/black" />
 
         <TextView
             android:id="@+id/title"
@@ -84,7 +84,7 @@
                 android:background="@color/white"
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
-                android:tint="@color/black"/>
+                app:tint="@color/black" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
