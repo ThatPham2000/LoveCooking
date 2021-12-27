@@ -10,7 +10,6 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:background="@color/white"
         android:orientation="vertical">
 
@@ -24,7 +23,7 @@
                 android:layout_width="120dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="left"
-                android:layout_marginEnd="16dp">
+                android:layout_marginRight="16dp">
 
                 <TextView
                     android:layout_width="90dp"
@@ -61,13 +60,33 @@
                 android:layout_marginLeft="120dp"
                 android:layout_marginRight="20dp"
                 android:orientation="horizontal"
-                android:paddingVertical="15dp"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+            <TextView
+                android:id="@+id/addPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/bg_add_post"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/primary_color"
+                android:text="Đăng bài mới..." />
+
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
 
             <LinearLayout

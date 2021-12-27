@@ -10,8 +10,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avtUser"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:src="@drawable/avt_user" />
 
     <LinearLayout
@@ -34,32 +34,62 @@
             android:text="Nguyễn Văn A"
             android:textColor="@color/black"
             android:textSize="16sp" />
-        <TextView
-            android:id="@+id/followNumber"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:layout_marginHorizontal="5dp"
-            android:ellipsize="end"
-            android:fontFamily="@font/roboto_regular"
-            android:includeFontPadding="false"
-            android:maxLines="1"
             android:paddingTop="5dp"
-            android:text="35k Người theo dõi"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-        <TextView
-            android:id="@+id/postNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="5dp"
-            android:ellipsize="end"
-            android:fontFamily="@font/roboto_regular"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:paddingTop="5dp"
-            android:text="200 Bài đăng"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:src="@drawable/follow"
+                app:tint="@color/grey" />
+            <TextView
+                android:id="@+id/followNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_bold"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="35k"
+                android:textColor="@color/primary_color"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:fontFamily="@font/roboto_bold"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="-"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_news"
+                app:tint="@color/grey" />
+            <TextView
+                android:id="@+id/postNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_bold"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:paddingTop="5dp"
+                android:text="200"
+                android:textColor="@color/primary_color"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
     </LinearLayout>
 
     <Button

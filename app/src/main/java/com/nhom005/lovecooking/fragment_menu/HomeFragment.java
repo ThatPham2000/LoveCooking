@@ -2,6 +2,7 @@ package com.nhom005.lovecooking.fragment_menu;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,10 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.nhom005.lovecooking.MainActivity;
 import com.nhom005.lovecooking.R;
 import com.nhom005.lovecooking.adapter.FeedNewsAdapter;
 import com.nhom005.lovecooking.adapter.StoryAdapter;
+import com.nhom005.lovecooking.add.AddImageAndVideo;
 import com.nhom005.lovecooking.models.FeedNews;
 import com.nhom005.lovecooking.models.Story;
 import com.nhom005.lovecooking.models.User;
@@ -56,9 +60,13 @@ public class HomeFragment extends Fragment {
 
     @SuppressLint("NotifyDataSetChanged")
     private void setComponents(View view) {
-
+        TextView addPost = view.findViewById(R.id.addPost);
+        addPost.setOnClickListener(v->{
+            Intent intent = new Intent(getContext(), AddImageAndVideo.class);
+            startActivity(intent);
+            getActivity().overridePendingTransition(R.anim.slide_in_bottom, R.anim.default_status);
+        });
         lvStory = view.findViewById(R.id.lvStory);
-        lvStory.setPaddingRelative(5, 0, 5, 0);
         adapter = new StoryAdapter(stories);
         lvStory.setAdapter(adapter);
 
@@ -66,7 +74,6 @@ public class HomeFragment extends Fragment {
         adapter.notifyDataSetChanged();
 
         lvFeedNews = view.findViewById(R.id.lvFeedNews);
-        lvFeedNews.setPaddingRelative(0, 0, 0, 10);
         lvFeedNews.setLayoutManager(new LinearLayoutManager(this.getContext()));
         feedNewsAdapter = new FeedNewsAdapter(Constants.feedNews);
         lvFeedNews.setAdapter(feedNewsAdapter);

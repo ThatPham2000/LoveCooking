@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.nhom005.lovecooking.MainActivity;
 import com.nhom005.lovecooking.R;
@@ -44,17 +45,21 @@ public class AddContent extends AppCompatActivity {
         btnPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddContent.this, MainActivity.class);
-                startActivity(intent);
-                AddContent.this.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                if (checkContent()) {
+                    Intent intent = new Intent(AddContent.this, MainActivity.class);
+                    startActivity(intent);
+                    AddContent.this.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                }else {
+                    Toast.makeText(getApplicationContext(), "Bạn cần điển đủ thông tin để được phép đăng bài", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         btnPreview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (foodName.getText().toString().isEmpty() || nguyenlieu.getText().toString().isEmpty() || cachthuchien.getText().toString().isEmpty()){
-                    //Show diaglog
+                if (!checkContent()){
+                    Toast.makeText(getApplicationContext(), "Bạn cần điển đủ thông tin để được phép xem trước bài đăng", Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent(AddContent.this, PostPreview.class);
                     Bundle myData = new Bundle();
@@ -68,6 +73,10 @@ public class AddContent extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private boolean checkContent() {
+        return !(foodName.getText().toString().isEmpty() || nguyenlieu.getText().toString().isEmpty() || cachthuchien.getText().toString().isEmpty());
     }
 
     private ArrayList<String> Split(String howtodo) {

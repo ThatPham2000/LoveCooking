@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nhom005.lovecooking.R;
 import com.nhom005.lovecooking.models.AlbumPicker;
@@ -26,13 +27,16 @@ public class AddImageAndVideo extends Activity {
 
     GalleryAdapter galleryAdapter;
     List<Integer> listPhoto = new ArrayList<>();
+    List<Integer> listPhotoPicker = new ArrayList<>();
 
     AlbumAdapter albumAdapter;
     List<AlbumPicker> listAlbum = new ArrayList<>();
 
     // Convert Gallery to Album
     ImageButton btnConvert;
+
     boolean isCheckConvert = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,16 +44,26 @@ public class AddImageAndVideo extends Activity {
 
         btnBack = (ImageButton) findViewById(R.id.btn_back_to_home);
         btnNext = (Button) findViewById(R.id.btn_go_to_content);
-        btnConvert = (ImageButton)findViewById(R.id.btn_convert);
-        albumName = (TextView)findViewById(R.id.album_name);
-        btnClear = (Button)findViewById(R.id.btn_clear);
+        btnConvert = (ImageButton) findViewById(R.id.btn_convert);
+        albumName = (TextView) findViewById(R.id.album_name);
+        btnClear = (Button) findViewById(R.id.btn_clear);
 
-        recyclerView = (RecyclerView)findViewById(R.id.recycler_view_gallery);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_gallery);
         recyclerView.setHasFixedSize(false);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(AddImageAndVideo.this, 3);
 
         setListPhoto();
-        galleryAdapter = new GalleryAdapter(AddImageAndVideo.this, listPhoto);
+        galleryAdapter = new GalleryAdapter(AddImageAndVideo.this, listPhoto, (position, checked) -> {
+            if (checked) {
+                if (!listPhotoPicker.contains(listPhoto.get(position))) {
+                    listPhotoPicker.add(listPhoto.get(position));
+                }
+            } else {
+                if (!listPhotoPicker.contains(listPhoto.get(position))) {
+                    listPhotoPicker.remove(listPhoto.get(position));
+                }
+            }
+        });
         recyclerView.setAdapter(galleryAdapter);
         recyclerView.setLayoutManager(gridLayoutManager);
 
@@ -77,7 +91,7 @@ public class AddImageAndVideo extends Activity {
         btnConvert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!isCheckConvert){
+                if (!isCheckConvert) {
                     btnConvert.setImageResource(R.drawable.ic_up);
                     isCheckConvert = true;
                     recyclerView.setLayoutManager(linearLayoutManager);
@@ -94,19 +108,20 @@ public class AddImageAndVideo extends Activity {
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!isCheckConvert){
+                if (!isCheckConvert) {
                     recyclerView.setLayoutManager(gridLayoutManager);
                     recyclerView.setAdapter(galleryAdapter);
                 }
             }
         });
 
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnNext.setOnClickListener(view -> {
+            if (!listPhotoPicker.isEmpty()) {
                 Intent intent = new Intent(AddImageAndVideo.this, AddContent.class);
                 startActivity(intent);
                 AddImageAndVideo.this.overridePendingTransition(R.anim.slide_in_right, R.anim.default_status);
+            } else {
+                Toast.makeText(getApplicationContext(), "Bạn cần chọn hình ảnh và video cho bàn đăng.", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -80,8 +80,8 @@ public class ResultSearchAdapter extends RecyclerView.Adapter<ResultViewHolder> 
 
             userResultHolder.avtUser.setImageResource(user.avatar);
             userResultHolder.userName.setText(user.name);
-            userResultHolder.followNumber.setText(user.numberFollower + " Người theo dõi");
-            userResultHolder.postNumber.setText(user.numberStatus + " Bài đăng");
+            userResultHolder.followNumber.setText(user.numberFollower + "");
+            userResultHolder.postNumber.setText(user.numberStatus + "");
 
             userResultHolder.userLayout.setOnClickListener(v->{
                 Constants.historyUser.add(user);

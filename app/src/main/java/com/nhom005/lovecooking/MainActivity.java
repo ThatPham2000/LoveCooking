@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     ViewPager2 viewPager2;
 
-    FloatingActionButton btnAdd;
     ImageView iconSearch, iconNotification;
 
     @Override
@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
 
         viewPager2 = (ViewPager2) findViewById(R.id.view_pager_2);
-        btnAdd = (FloatingActionButton) findViewById(R.id.fab);
 
         // Khởi tạo Adapter
         MyFragmentAdapter myFragmentAdapter = new MyFragmentAdapter(this);
@@ -94,14 +93,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AddImageAndVideo.class);
-                startActivity(intent);
-                MainActivity.this.overridePendingTransition(R.anim.slide_in_bottom, R.anim.default_status);
-            }
-        });
 
         getDataBase();
     }
@@ -145,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 "Vũ Phan Nhật Tài",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -155,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 "Phạm Minh Vương",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -165,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
                 "Phạm Văn Thật",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -175,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
                 "Nguyễn Thị Anh Thư",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -185,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
                 "Lưu Tường Vũ",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -195,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
                 "Đỗ Bảo Ngọc",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -205,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
                 "Nguyễn Khắc Trí",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -215,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
                 "Kỳ Bạch",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -225,7 +216,7 @@ public class MainActivity extends AppCompatActivity {
                 "Song Nguyệt",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -235,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
                 "Nhung Mẫn",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -245,7 +236,7 @@ public class MainActivity extends AppCompatActivity {
                 "Thiên Nam",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -255,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
                 "Huy Đạt",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -265,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
                 "Thúy Hằng",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -275,7 +266,7 @@ public class MainActivity extends AppCompatActivity {
                 "Đặng Thu Giang",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -285,7 +276,7 @@ public class MainActivity extends AppCompatActivity {
                 "Mỹ Trâm",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -295,7 +286,7 @@ public class MainActivity extends AppCompatActivity {
                 "Hưng Khải",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -305,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
                 "Thư San",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
@@ -315,7 +306,7 @@ public class MainActivity extends AppCompatActivity {
                 "Danh Châu",
                 "Học tại trường đại học Khoa học Tự Nhiên",
                 "Làm việc tại TPHCM",
-                "<u>htttps://abc.com</u>",
+                "htttps://abc.com",
                 100,
                 200,
                 System.currentTimeMillis() % 2 == 0
