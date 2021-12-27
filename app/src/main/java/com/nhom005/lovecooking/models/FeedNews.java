@@ -5,6 +5,23 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class FeedNews implements Serializable {
+    public FeedNews(User user, ArrayList<Integer> images, String ulrVideo, String title, String material, ArrayList<String> howToDoIt, String experience, int numberLove, int numberComment, float rating, boolean isLoving, String timeUpload) {
+        this.user = user;
+        this.images = images;
+        this.ulrVideo = ulrVideo;
+        this.title = title;
+        this.material = material;
+        this.howToDoIt = howToDoIt;
+        this.experience = experience;
+        this.numberLove = numberLove;
+        this.numberComment = numberComment;
+        this.rating = rating;
+        this.isLoving = isLoving;
+        this.timeUpload = timeUpload;
+    }
+
+    public FeedNews(){}
+
     public User user;
     public ArrayList<Integer> images;
     public String ulrVideo;

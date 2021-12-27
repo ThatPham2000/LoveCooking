@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.nhom005.lovecooking"
-        minSdk 28
+        minSdk 16
         targetSdk 31
         versionCode 1
         versionName "1.0"

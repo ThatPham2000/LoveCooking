@@ -26,6 +26,7 @@ import com.nhom005.lovecooking.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class FeedNewsAdapter extends RecyclerView.Adapter<FeedNewsAdapter.FeedNewsHolder> {
@@ -63,7 +64,7 @@ public class FeedNewsAdapter extends RecyclerView.Adapter<FeedNewsAdapter.FeedNe
             });
             holder.userName.setText(feedNews.user.name);
             holder.timeUpload.setText(feedNews.timeUpload + " phút trước");
-            holder.titleStatus.setText(feedNews.title);
+            holder.titleStatus.setText(feedNews.title.toUpperCase(Locale.ROOT));
             holder.materialFood.setText(feedNews.material);
             holder.numberComment.setText(feedNews.numberComment + "");
             holder.numberLove.setText(feedNews.numberLove + "");

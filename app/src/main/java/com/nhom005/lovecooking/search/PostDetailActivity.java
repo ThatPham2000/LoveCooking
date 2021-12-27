@@ -2,6 +2,7 @@ package com.nhom005.lovecooking.search;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import com.nhom005.lovecooking.models.FeedNews;
 import com.nhom005.lovecooking.utils.Constants;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class PostDetailActivity extends AppCompatActivity {
@@ -36,6 +38,7 @@ public class PostDetailActivity extends AppCompatActivity {
     Button btnPost;
 
     TextView foodNameTxt, nguyenLieuTxt, buoc1Txt, buoc2Txt, buoc3Txt, buoc4Txt, kinhNghiemTxt, title, userName, timeUpload;
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +57,7 @@ public class PostDetailActivity extends AppCompatActivity {
         avtUser.setImageResource(feedNews.user.avatar);
 
         foodNameTxt = (TextView)findViewById(R.id.food_name_txt);
-        foodNameTxt.setText(feedNews.title);
+        foodNameTxt.setText(feedNews.title.toUpperCase(Locale.ROOT));
 
         nguyenLieuTxt = (TextView)findViewById(R.id.nguyenlieu_txt);
         nguyenLieuTxt.setText(feedNews.material);

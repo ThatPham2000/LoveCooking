@@ -1,8 +1,12 @@
 package com.nhom005.lovecooking.search;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
@@ -49,6 +53,23 @@ public class ResultSearchActivity extends AppCompatActivity {
                     break;
             }
         })).attach();
+
+        searchKeyInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean handled = false;
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    String keySearch = searchKeyInput.getText().toString();
+                    Constants.historyTextSearch.add(keySearch);
+
+                    Intent intent = new Intent(getApplicationContext(), ResultSearchActivity.class);
+                    intent.putExtra(Constants.KEY_TEXT_SEARCH, keySearch);
+                    startActivity(intent);
+                    handled = true;
+                }
+                return handled;
+            }
+        });
 
         receiverIntent();
     }
