@@ -3,6 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/drawable-xxxhdpi/bg_follow_button.xml" value="0.21851851851851853" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/drawable/bg_comment.xml" value="0.21666666666666667" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/drawable/bg_comment_textview.xml" value="0.21666666666666667" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/drawable/bg_newsfeed_button.xml" value="0.21851851851851853" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/drawable/bg_outline_botton.xml" value="0.21818181061547676" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/drawable/ic_smile.xml" value="0.21666666666666667" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/layout/activity_add_content.xml" value="0.21818181061547676" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/layout/activity_add_image_and_video.xml" value="0.4" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/layout/activity_comment.xml" value="0.21818181061547676" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/layout/activity_main.xml" value="0.14108409321175278" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/layout/activity_post_detail.xml" value="0.14108409321175278" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/layout/activity_post_preview.xml" value="0.4363636212309535" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/layout/activity_search.xml" value="0.21818181061547676" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/layout/fragment_home.xml" value="0.3821138211382114" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/layout/gallery_item.xml" value="0.14108409321175278" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/layout/item_coment.xml" value="0.21818181061547676" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/layout/item_newsfeed_layout.xml" value="0.14108409321175278" />
+        <entry key="..\:/LoveCooking-master/LoveCooking-master/app/src/main/res/layout/item_story_layout.xml" value="0.14108409321175278" />
         <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/drawable/bg_add_post.xml" value="0.30564102564102563" />
         <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/drawable/bg_button_non_select.xml" value="0.30564102564102563" />
         <entry key="..\:/University/Subject/ThietKeGiaoDien/Project/PA4/source/app/src/main/res/drawable/bg_button_selected.xml" value="0.30564102564102563" />

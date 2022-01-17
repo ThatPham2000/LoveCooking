@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.nhom005.lovecooking.MainActivity;
@@ -17,8 +18,8 @@ import java.util.ArrayList;
 
 public class AddContent extends AppCompatActivity {
     ImageButton btnBack;
-    Button btnPost, btnPreview;
-
+    Button btnPost;
+    ImageView btnPreview;
     EditText foodName, nguyenlieu, kinhnghiem, cachthuchien;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class AddContent extends AppCompatActivity {
 
         btnBack = (ImageButton) findViewById(R.id.btn_back_to_add_image);
         btnPost = (Button)findViewById(R.id.btn_post);
-        btnPreview = (Button)findViewById(R.id.btn_preview);
+        btnPreview = (ImageView)findViewById(R.id.btn_preview);
 
         foodName = (EditText)findViewById(R.id.food_name);
         nguyenlieu = (EditText)findViewById(R.id.nguyenlieu);
@@ -76,6 +77,16 @@ public class AddContent extends AppCompatActivity {
     }
 
     private boolean checkContent() {
+        if(foodName.getText().toString().isEmpty()){
+            foodName.setError("Bạn cần nhập tên món ăn");
+        }
+        if(nguyenlieu.getText().toString().isEmpty()){
+            nguyenlieu.setError("Bạn cần nhập nguyên liệu");
+        }
+        if(cachthuchien.getText().toString().isEmpty()){
+            cachthuchien.setError("Bạn cần nhập cách thực hiện");
+        }
+
         return !(foodName.getText().toString().isEmpty() || nguyenlieu.getText().toString().isEmpty() || cachthuchien.getText().toString().isEmpty());
     }
 

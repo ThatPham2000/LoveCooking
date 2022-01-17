@@ -1,5 +1,6 @@
 package com.nhom005.lovecooking.utils;
 
+import com.nhom005.lovecooking.models.Comment;
 import com.nhom005.lovecooking.models.FeedNews;
 import com.nhom005.lovecooking.models.User;
 
@@ -17,5 +18,6 @@ public class Constants {
     public static ArrayList<User> userResult = new ArrayList<>();
     public static ArrayList<FeedNews> postResult = new ArrayList<>();
     public static ArrayList allResult = new ArrayList();
+    public static ArrayList<Comment> comments = new ArrayList<>();
 
 }

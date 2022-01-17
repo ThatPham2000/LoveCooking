@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LoveCooking">
         <activity
+            android:name=".comment.CommentActivity"
+            android:exported="false" />
+        <activity
             android:name=".search.ProfileActivity"
             android:exported="false" />
         <activity

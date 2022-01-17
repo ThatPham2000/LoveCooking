@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.nhom005.lovecooking.R;
+import com.nhom005.lovecooking.comment.CommentActivity;
 import com.nhom005.lovecooking.models.FeedNews;
 import com.nhom005.lovecooking.models.User;
 import com.nhom005.lovecooking.search.PostDetailActivity;
@@ -97,6 +98,11 @@ public class ResultSearchAdapter extends RecyclerView.Adapter<ResultViewHolder> 
                 postResultHolder.postLayout.setOnClickListener(v->{
                     Intent intent = new Intent(context, PostDetailActivity.class);
                     intent.putExtra(Constants.KEY_FEED_NEWS, feedNews);
+                    context.startActivity(intent);
+                });
+
+                postResultHolder.commentBtn.setOnClickListener(v->{
+                    Intent intent = new Intent(context, CommentActivity.class);
                     context.startActivity(intent);
                 });
 

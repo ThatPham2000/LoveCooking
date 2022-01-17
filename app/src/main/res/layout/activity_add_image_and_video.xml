@@ -40,17 +40,19 @@
 
         <Button
             android:id="@+id/btn_go_to_content"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="Tiếp"
-            android:gravity="center"
             android:layout_gravity="center"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/btn_round"
-            android:textColor="@color/white"
             android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="5dp"
-            android:fontFamily="@font/roboto_medium"/>
+            android:textAllCaps="false"
+            android:background="@drawable/btn_round"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:text="Tiếp"
+            android:textSize="15sp"
+            android:textColor="@color/white" />
     </LinearLayout>
     <View
         android:layout_width="match_parent"
@@ -98,6 +100,8 @@
             android:background="@drawable/btn_round"
             android:textColor="@color/white"
             android:layout_marginRight="10dp"
+            android:textAllCaps="false"
+            android:textSize="15sp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/roboto_medium"/>
@@ -111,7 +115,7 @@
             android:id="@+id/recycler_view_gallery"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
+            android:layout_marginLeft="1dp"
             android:layout_marginBottom="1dp"/>
     </LinearLayout>
 

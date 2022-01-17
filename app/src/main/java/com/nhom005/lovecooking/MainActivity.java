@@ -18,6 +18,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.nhom005.lovecooking.add.AddImageAndVideo;
 import com.nhom005.lovecooking.fragment_menu.MyFragmentAdapter;
+import com.nhom005.lovecooking.models.Comment;
 import com.nhom005.lovecooking.models.FeedNews;
 import com.nhom005.lovecooking.models.User;
 import com.nhom005.lovecooking.search.SearchActivity;
@@ -25,6 +26,7 @@ import com.nhom005.lovecooking.utils.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
@@ -500,8 +502,19 @@ public class MainActivity extends AppCompatActivity {
 
         Constants.historyTextSearch.add("gà kho xả ớt");
         Constants.historyTextSearch.add("Rau muốn xào tỏi");
-
-
+        Random r = new Random();
+        for (User user : Constants.users) {
+            int rad = r.nextInt();
+            Comment comment = new Comment(user, "Món ăn rất ngon");
+            if (rad % 3 == 0) {
+                comment.content = "Good job bro!!!";
+            } else if (rad % 3 == 1) {
+                comment.content = "Tôi vẫn chưa thể làm được";
+                comment.reply.add(new Comment(Constants.users.get((int) rad % 10), "Tôi cũng vậy"));
+                comment.reply.add(new Comment(Constants.users.get((int) rad % 10), "Tôi đã làm được"));
+            }
+            Constants.comments.add(comment);
+        }
     }
 
     @Override

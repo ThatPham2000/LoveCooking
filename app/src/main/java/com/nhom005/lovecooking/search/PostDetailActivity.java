@@ -18,6 +18,7 @@ import android.widget.VideoView;
 import com.nhom005.lovecooking.MainActivity;
 import com.nhom005.lovecooking.R;
 import com.nhom005.lovecooking.add.PostPreview;
+import com.nhom005.lovecooking.comment.CommentActivity;
 import com.nhom005.lovecooking.models.FeedNews;
 import com.nhom005.lovecooking.utils.Constants;
 
@@ -26,7 +27,7 @@ import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class PostDetailActivity extends AppCompatActivity {
-    ImageView imageView;
+    ImageView imageView, commentBtn;
     TextView pagingImage;
     VideoView videoView;
     ImageView nextImageBtn;
@@ -38,6 +39,7 @@ public class PostDetailActivity extends AppCompatActivity {
     Button btnPost;
 
     TextView foodNameTxt, nguyenLieuTxt, buoc1Txt, buoc2Txt, buoc3Txt, buoc4Txt, kinhNghiemTxt, title, userName, timeUpload;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,31 +52,38 @@ public class PostDetailActivity extends AppCompatActivity {
         avtUser = findViewById(R.id.avtUser);
         userName = findViewById(R.id.userName);
         timeUpload = findViewById(R.id.timeUpload);
+        commentBtn = findViewById(R.id.commentBtn);
 
+        commentBtn.setOnClickListener(v -> {
+
+            Intent intent = new Intent(getApplicationContext(), CommentActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_bottom, R.anim.default_status);
+        });
         title.setText(feedNews.user.name);
         userName.setText(feedNews.user.name);
         timeUpload.setText(feedNews.timeUpload + " Phút trước");
         avtUser.setImageResource(feedNews.user.avatar);
 
-        foodNameTxt = (TextView)findViewById(R.id.food_name_txt);
+        foodNameTxt = (TextView) findViewById(R.id.food_name_txt);
         foodNameTxt.setText(feedNews.title.toUpperCase(Locale.ROOT));
 
-        nguyenLieuTxt = (TextView)findViewById(R.id.nguyenlieu_txt);
+        nguyenLieuTxt = (TextView) findViewById(R.id.nguyenlieu_txt);
         nguyenLieuTxt.setText(feedNews.material);
 
-        buoc1Txt = (TextView)findViewById(R.id.buoc1_txt);
+        buoc1Txt = (TextView) findViewById(R.id.buoc1_txt);
         buoc1Txt.setText(feedNews.howToDoIt.get(0));
 
-        buoc2Txt = (TextView)findViewById(R.id.buoc2_txt);
+        buoc2Txt = (TextView) findViewById(R.id.buoc2_txt);
         buoc2Txt.setText(feedNews.howToDoIt.get(1));
 
-        buoc3Txt = (TextView)findViewById(R.id.buoc3_txt);
+        buoc3Txt = (TextView) findViewById(R.id.buoc3_txt);
         buoc3Txt.setText(feedNews.howToDoIt.get(2));
 
-        buoc4Txt = (TextView)findViewById(R.id.buoc4_txt);
+        buoc4Txt = (TextView) findViewById(R.id.buoc4_txt);
         buoc4Txt.setText(feedNews.howToDoIt.get(3));
 
-        kinhNghiemTxt = (TextView)findViewById(R.id.kinhnghiem_txt);
+        kinhNghiemTxt = (TextView) findViewById(R.id.kinhnghiem_txt);
         kinhNghiemTxt.setText(feedNews.experience);
 
         imageView = findViewById(R.id.imageView);
@@ -86,7 +95,7 @@ public class PostDetailActivity extends AppCompatActivity {
         nextImageBtn = findViewById(R.id.nextImageBtn);
         prevImageBtn = findViewById(R.id.prevImageBtn);
 
-        btnBackToContent = (ImageButton)findViewById(R.id.btn_back_to_content);
+        btnBackToContent = (ImageButton) findViewById(R.id.btn_back_to_content);
         btnBackToContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

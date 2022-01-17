@@ -14,4 +14,9 @@
         <!-- Customize your theme here. -->
         <item name="colorAccent">@color/primary_color</item>
     </style>
+
+    <style name="OutlineButtonStyle">
+        <item name="android:textColor">@color/primary_color</item>
+        <item name="android:background">@drawable/bg_outline_botton</item>
+    </style>
 </resources>
