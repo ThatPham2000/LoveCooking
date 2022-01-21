@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.nhom005.lovecooking.R;
@@ -16,6 +17,7 @@ public class ProfileActivity extends AppCompatActivity {
     ImageView backBtn, avatar;
     TextView userName, workTxt, educationTxt, websiteTxt;
     Button followBtn, unfollowBtn;
+    ScrollView layoutScroll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,9 @@ public class ProfileActivity extends AppCompatActivity {
         websiteTxt = findViewById(R.id.websiteTxt);
         followBtn = findViewById(R.id.followBtn);
         unfollowBtn = findViewById(R.id.unfollowBtn);
+        layoutScroll = findViewById(R.id.layoutScroll);
+
+//        layoutScroll.pageScroll(View.SCROLL_INDICATOR_TOP);
 
         backBtn.setOnClickListener(v -> {
             onBackPressed();

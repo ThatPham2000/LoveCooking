@@ -112,6 +112,7 @@ public class AddImageAndVideo extends Activity {
                     recyclerView.setLayoutManager(gridLayoutManager);
                     recyclerView.setAdapter(galleryAdapter);
                 }
+                listPhotoPicker.clear();
             }
         });
 

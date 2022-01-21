@@ -51,7 +51,7 @@ public class AddContent extends AppCompatActivity {
                     startActivity(intent);
                     AddContent.this.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 }else {
-                    Toast.makeText(getApplicationContext(), "Bạn cần điển đủ thông tin để được phép đăng bài", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Bạn cần điển đủ thông tin để được phép đăng bài", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -60,7 +60,7 @@ public class AddContent extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (!checkContent()){
-                    Toast.makeText(getApplicationContext(), "Bạn cần điển đủ thông tin để được phép xem trước bài đăng", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(), "Bạn cần điển đủ thông tin để được phép xem trước bài đăng", Toast.LENGTH_SHORT).show();
                 } else {
                     Intent intent = new Intent(AddContent.this, PostPreview.class);
                     Bundle myData = new Bundle();
